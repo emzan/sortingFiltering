@@ -1,0 +1,4 @@
+let vals = [5, 4, 9, 2, 1]
+
+vals = vals.filter(x => x % 2 == 0);
+console.log(vals)
