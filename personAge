@@ -1,0 +1,62 @@
+
+enum Gender{
+    MALE,
+    FEMALE
+}
+
+
+interface Person {
+    name: string;
+    age: number;
+    gender: Gender
+}
+
+const people: Person[] = [
+    {
+        name: 'Paul Fatti',
+        age: 126,
+        gender: Gender.MALE
+    },
+    {
+        name: 'Paulsona Boirti',
+        age: 13,
+        gender: Gender.FEMALE
+    },
+    {
+        name: 'Raul Dweti',
+        age: 63,
+        gender: Gender.MALE
+    },
+    {
+        name: 'Karla Attyri',
+        age: 6,
+        gender: Gender.FEMALE
+    },
+    {
+        name: 'Marc Ceti',
+        age: 36,
+        gender: Gender.MALE
+    },
+    {
+        name: 'Paula Eti',
+        age: 76,
+        gender: Gender.FEMALE
+    },
+]
+
+const minMax = {min: 1, max: 50}
+
+const filterByAge = (people: Person[], 
+range: {min: number, max: number}) => 
+people.filter(person => person.age >= range.min && person.age <= range.max)
+
+const sortByAge = (people: Person[]) => people.sort((personA: Person, personB: Person) => 
+    personA.age - personB.age
+)
+
+const filteredByAge = filterByAge(people, minMax)
+const sortedByAge = sortByAge(people)
+const result = sortByAge(filterByAge(people, minMax))
+console.log(filteredByAge)
+console.log(sortedByAge)
+console.log(result);
